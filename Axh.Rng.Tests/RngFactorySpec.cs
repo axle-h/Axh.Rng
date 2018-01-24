@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Axh.Rng.Tests.Pocos;
+using Random.Stuff.Tests.Pocos;
 using Shouldly;
 using Xunit;
 
-namespace Axh.Rng.Tests
+namespace Random.Stuff.Tests
 {
     public abstract class RngFactorySpec<TObject>
     {
@@ -14,7 +14,7 @@ namespace Axh.Rng.Tests
 
         protected RngFactorySpec()
         {
-            var factory = RngFactory.Build<TObject>();
+            var factory = Rng.ObjectFactory<TObject>();
             Objects = Enumerable.Range(0, 10).Select(_ => factory()).ToArray();
         }
 

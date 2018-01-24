@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Axh.Rng.Tests.Pocos
+namespace Random.Stuff.Tests.Pocos
 {
     public class PocoWithCollections
     {

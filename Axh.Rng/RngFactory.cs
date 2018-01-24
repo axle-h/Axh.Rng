@@ -4,9 +4,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Axh.Rng
+namespace Random.Stuff
 {
-    public static class RngFactory
+    internal static class RngFactory
     {
         private const int MinimumCollectionSize = 2;
         private const int MaximumCollectionSize = 8;
@@ -54,7 +54,7 @@ namespace Axh.Rng
                 var properties = type.GetProperties().Where(x => x.CanWrite).ToArray();
                 if (properties.Any())
                 {
-                    // We have an empty constructor and some public proeprties lets just call that and set... them.
+                    // We have an empty constructor and some public properties lets just call that and set... them.
                     var propertyBindings = properties
                         .Select(p => (MemberBinding)Expression.Bind(p, NextFactory(p.PropertyType, nextRecursion)))
                         .ToArray();
@@ -254,7 +254,7 @@ namespace Axh.Rng
 
             if (type.GetTypeInfo().IsEnum)
             {
-                f = Expression.Convert(Expression.Call(null, GetRngMethod(nameof(Rng.Enum)), Expression.Constant(type)), type);
+                f = Expression.Call(null, GetRngMethod(nameof(Rng.Enum)).MakeGenericMethod(type));
                 return true;
             }
 

@@ -1,6 +1,6 @@
 using System;
 
-namespace Axh.Rng.Tests.Pocos
+namespace Random.Stuff.Tests.Pocos
 {
     public class SimplePoco
     {

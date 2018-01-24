@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Axh.Rng\Axh.Rng.csproj" />
+    <ProjectReference Include="..\Axh.Rng\Random.Stuff.csproj" />
   </ItemGroup>
 
 </Project>

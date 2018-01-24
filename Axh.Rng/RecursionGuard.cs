@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Axh.Rng
+namespace Random.Stuff
 {
     internal class RecursionGuard
     {
