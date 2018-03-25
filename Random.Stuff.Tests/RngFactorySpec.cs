@@ -18,11 +18,11 @@ namespace Random.Stuff.Tests
             Objects = Enumerable.Range(0, 10).Select(_ => factory()).ToArray();
         }
 
-        [Fact] public void it_should_generate_non_empty_array() => Objects.ShouldNotBeEmpty();
+        [Fact] public void It_should_generate_non_empty_array() => Objects.ShouldNotBeEmpty();
 
-        [Fact] public void all_test_objects_should_not_be_null() => Objects.ShouldAllBe(x => x != null);
+        [Fact] public void All_test_objects_should_not_be_null() => Objects.ShouldAllBe(x => x != null);
 
-        [Fact] public void there_should_not_be_loads_of_defaults() => Objects.ShouldAllBe(x => HasSomeNonDefaultProperties(x));
+        [Fact] public void There_should_not_be_loads_of_defaults() => Objects.ShouldAllBe(x => HasSomeNonDefaultProperties(x));
 
         private static bool HasSomeNonDefaultProperties(TObject value)
         {
